@@ -1,4 +1,5 @@
 import discord
+import os
 from discord.ext import commands, tasks
 from discord import app_commands
 from discord.ui import Button, View
@@ -8,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 # =========================
 # KONFIG
 # =========================
-TOKEN = "111"  # PLATZHALTER – wird später in Railway ersetzt
+TOKEN = os.getenv("TOKEN")  # PLATZHALTER – wird später in Railway ersetzt
 BOT_VERSION = "v2.1(Build N.375)"
 
 intents = discord.Intents.default()
@@ -125,3 +126,4 @@ async def giveaway(
 # START
 # =========================
 bot.run(TOKEN)
+
